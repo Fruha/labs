@@ -135,6 +135,6 @@ TEST(DeckMethods, Parameters)
 	ASSERT_EQ(2, a2(0));
 	Deck a3;
 	++a3;
-	ASSERT_FALSE(0 == a3[1]);
-	ASSERT_FALSE(0 == a3(1));
+	ASSERT_FALSE(0 == a3[0]);
+	ASSERT_FALSE(0 == a3(0));
 }
