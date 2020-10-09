@@ -37,11 +37,6 @@ namespace laba3
 		}
 	}
 
-	Deck::Deck(Deck&& deck) : max_len(deck.max_len), len(deck.len), data(deck.data)
-	{
-		deck.data = nullptr;
-	}
-
 	Deck& Deck::operator =(const Deck& deck)
 	{
 		if (this != &deck) {
@@ -52,20 +47,6 @@ namespace laba3
 			for (int i = 0; i < len; ++i)
 				data[i] = deck.data[i];
 		}
-		return *this;
-	}
-
-	Deck& Deck::operator =(Deck&& deck) 
-	{
-		int a1 = max_len;
-		max_len = deck.max_len;
-		deck.max_len = a1;
-		int a2 = len;
-		len = deck.len;
-		deck.len = a2;
-		Card* a3 = data;
-		data = deck.data;
-		deck.data = a3;
 		return *this;
 	}
 

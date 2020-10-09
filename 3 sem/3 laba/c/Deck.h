@@ -17,7 +17,6 @@ namespace laba3
 		Deck(int = 0);
 		Deck(Card);
 		Deck(const Deck&);
-		Deck(Deck&&);
 		// destruct
 		~Deck() { delete[] data; };
 		//get
@@ -32,7 +31,6 @@ namespace laba3
 		void set_card(const Card, const int i);
 		// another
 		Deck& operator =(const Deck&);
-		Deck& operator =(Deck&&);
 		int delete_card(const Card&);
 		int delete_card(const int);
 		Deck& operator++();
@@ -41,7 +39,7 @@ namespace laba3
 		int add_new_card(const Card); // 0 ok, 1 max cards, 2 already exists
 		void swap(Card&, Card&);
 		void sort(int = 0, int = 51);
+		// friend
 		friend std::ostream& operator<<(std::ostream&, const Deck&);
-		
 	};
 }

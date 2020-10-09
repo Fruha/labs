@@ -16,10 +16,10 @@ namespace laba3
 	public:
 	// init
 		Card(bool = 0); // 0 null, 1 random
-		explicit Card(char, string);
-		explicit Card(char, int);
-		explicit Card(int, string);
-		explicit Card(int, int);
+		Card(char, string);
+		Card(char, int);
+		Card(int, string);
+		Card(int, int);
 	// get
 		int    get_suit_int() const { return suit_int; };
 		char   get_suit_ch() const { return suit_ch ; };
@@ -37,7 +37,6 @@ namespace laba3
 		int suit_ch_to_int(const char) const;
 		char suit_int_to_ch(const int) const;
 		friend std::ostream& operator<<(std::ostream&, const Card&);
-		//void print() const;
 	// friend
 	};
 }
