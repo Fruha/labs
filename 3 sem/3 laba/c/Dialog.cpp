@@ -18,8 +18,16 @@ namespace laba3 {
 		};
 		int NMsgs = sizeof(msgs) / sizeof(msgs[0]);
 		int n;
-		while (n = input_choise(msgs, NMsgs)) {
-			laba3::dialog(deck, n);
+		while (n = input_choise(msgs, NMsgs))
+		{
+			try
+			{
+				laba3::dialog(deck, n);
+			}
+			catch (...)
+			{
+				std::cout << "Error please repeat again" << std::endl;
+			}
 		}
 	}
 
@@ -48,15 +56,17 @@ namespace laba3 {
 		puts("S1 H2 C3 D4");
 		char   suit = get_num<char>("Enter suit (char):");
 		string rang = get_num<string>("Enter rang (str):");
+
 		Card temp(suit, rang);
 		int err = deck.add_new_card(temp);
-		switch (err) 
+		switch (err)
 		{
 		case 1:
 			puts("Max cards");
 		case 2:
 			puts("Card already exists");
 		}
+
 		return;
 	}
 
