@@ -17,6 +17,7 @@ namespace laba3
 		Deck(int = 0);
 		Deck(Card);
 		Deck(const Deck&);
+		Deck(Deck&&);
 		// destruct
 		~Deck() { delete[] data; };
 		//get
@@ -31,6 +32,7 @@ namespace laba3
 		void set_card(const Card, const int i);
 		// another
 		Deck& operator =(const Deck&);
+		Deck& Deck::operator =(Deck&&);
 		int delete_card(const Card&);
 		int delete_card(const int);
 		Deck& operator++();

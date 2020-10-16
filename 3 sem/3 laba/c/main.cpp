@@ -11,5 +11,4 @@ int main(int argc, char* argv[])
 	start_dialog(deck);
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
-
 }

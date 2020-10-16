@@ -35,6 +35,13 @@ namespace laba3
 		{
 			data[i] = deck.data[i];
 		}
+		//cout << "Deck&" << endl;
+	}
+
+	Deck::Deck(Deck&& deck) : max_len(deck.max_len), len(deck.len), data(deck.data)
+	{
+		deck.data = nullptr;
+		//cout << "Deck&&" << endl;
 	}
 
 	Deck& Deck::operator =(const Deck& deck)
@@ -47,6 +54,21 @@ namespace laba3
 			for (int i = 0; i < len; ++i)
 				data[i] = deck.data[i];
 		}
+		//cout << "=Deck&" << endl;
+		return *this;
+	}
+	Deck& Deck::operator =(Deck&& deck)
+	{
+		if (&deck == this)
+			return *this;
+		max_len = deck.max_len;
+		deck.max_len = 0;
+		len = deck.len;
+		deck.len = 0;
+		delete[] data;
+		data = deck.data;
+		deck.data = nullptr;
+		//cout << "=Deck&&" << endl;
 		return *this;
 	}
 
