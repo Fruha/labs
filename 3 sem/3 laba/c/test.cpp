@@ -138,3 +138,20 @@ TEST(DeckMethods, Parameters)
 	ASSERT_FALSE(0 == a3[0]);
 	ASSERT_FALSE(0 == a3(0));
 }
+TEST(DeckMethods, Sort)
+{
+	Deck a1;
+	a1.add_new_card(Card(2, 2));
+	a1.add_new_card(Card(1, 2));
+	a1.add_new_card(Card(3, 2));
+	a1.add_new_card(Card(3, 10));
+	a1.sort();
+	ASSERT_EQ(1, a1.get_card(0).get_suit_int());
+	ASSERT_EQ(2, a1.get_card(0).get_rang_int());
+	ASSERT_EQ(2, a1.get_card(1).get_suit_int());
+	ASSERT_EQ(2, a1.get_card(1).get_rang_int());
+	ASSERT_EQ(3, a1.get_card(2).get_suit_int());
+	ASSERT_EQ(2, a1.get_card(2).get_rang_int());
+	ASSERT_EQ(3, a1.get_card(3).get_suit_int());
+	ASSERT_EQ(10, a1.get_card(3).get_rang_int());
+}

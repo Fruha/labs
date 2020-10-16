@@ -7,8 +7,8 @@ namespace laba3
 	class Deck 
 	{
 	private:
+		static const int MAX_LEN = 52;
 		const int QUOTA = 2;
-		const int MAX_LEN = 52;
 		int max_len;
 		int len;
 		Card* data;
@@ -38,7 +38,7 @@ namespace laba3
 		int operator[](const int);
 		int add_new_card(const Card); // 0 ok, 1 max cards, 2 already exists
 		void swap(Card&, Card&);
-		void sort(int = 0, int = 51);
+		void sort(int = 0, int = MAX_LEN-1);
 		// friend
 		friend std::ostream& operator<<(std::ostream&, const Deck&);
 	};
