@@ -61,13 +61,9 @@ namespace laba3
 	{
 		if (&deck == this)
 			return *this;
-		max_len = deck.max_len;
-		deck.max_len = 0;
-		len = deck.len;
-		deck.len = 0;
-		delete[] data;
-		data = deck.data;
-		deck.data = nullptr;
+		std::swap(max_len, deck.max_len);
+		std::swap(len, deck.len);
+		std::swap(data, deck.data);
 		//cout << "=Deck&&" << endl;
 		return *this;
 	}
